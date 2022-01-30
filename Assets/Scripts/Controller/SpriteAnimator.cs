@@ -6,24 +6,71 @@ using System;
 
 namespace SunnyLand
 {
-    public class SpriteAnimator : IDisposable, IExecute
+    public class SpriteAnimator : IDisposable
     {
-       
+
+        private sealed class Animation
+        {
+            public AnimStatePlayer Track;
+            public List<Sprite> Sprites;
+            public bool Loop;
+            public float Speed = 10;
+            public float Counter;
+            public bool Sleep;
+
+            public void Update()
+            {
+                if (Sleep) return;
+
+                Counter += Time.deltaTime * Speed;
+                if (Loop)
+                {
+                    while (Counter > Sprites.Count)
+                    {
+                        Counter -= Sprites.Count;
+                    }
+                }
+                else if (Counter > Sprites.Count)
+                {
+                    Counter = Sprites.Count;
+                    Sleep = true;
+                }
+            }
+
+        }
+
+
+
         private SpriteAnimationsConfig _config;
-        private Dictionary<SpriteRenderer, Animation> _activeAnimations = new Dictionary<SpriteRenderer, Animation>();
+        private Dictionary<SpriteRenderer, Animation> _activeAnimation = new Dictionary<SpriteRenderer, Animation>();
 
         public SpriteAnimator(SpriteAnimationsConfig config)
         {
             _config = config;
         }
 
+        public void Update()
+        {
+            foreach (var animation in _activeAnimation)
+            {
+                animation.Value.Update();
+
+                if (animation.Value.Counter < animation.Value.Sprites.Count)
+                {
+                    animation.Key.sprite = animation.Value.Sprites[(int)animation.Value.Counter];
+                }
+            }
+        }
+
+
         public void StartAnimation(SpriteRenderer spriteRenderer, AnimStatePlayer track, bool loop, float speed)
         {
-            if (_activeAnimations.TryGetValue(spriteRenderer, out var animation))
+            if (_activeAnimation.TryGetValue(spriteRenderer, out var animation))
             {
+                animation.Sleep = false;
                 animation.Loop = loop;
                 animation.Speed = speed;
-                animation.Sleeps = false;
+
                 if (animation.Track != track)
                 {
                     animation.Track = track;
@@ -33,36 +80,32 @@ namespace SunnyLand
             }
             else
             {
-                _activeAnimations.Add(spriteRenderer, new Animation()
+                _activeAnimation.Add(spriteRenderer, new Animation()
                 {
-                    Track = track,
-                    Sprites = _config.Sequences.Find(sequence => sequence.Track == track).Sprites,
+
                     Loop = loop,
-                    Speed = speed
+                    Speed = speed,
+
+                    Track = track,
+                    Sprites = _config.Sequences.Find(sequence => sequence.Track == track).Sprites
+
                 });
             }
         }
 
-        public void StopAnimation(SpriteRenderer sprite)
-        {
-            if (_activeAnimations.ContainsKey(sprite))
-            {
-                _activeAnimations.Remove(sprite);
-            }
-        }
 
-        public void Execute(float deltatime)
+
+        public void StopAnimation(SpriteRenderer spriteRenderer)
         {
-            foreach (var animation in _activeAnimations)
+            if (_activeAnimation.ContainsKey(spriteRenderer))
             {
-                animation.Value.UpdateAnimation(deltatime);
-                animation.Key.sprite = animation.Value.Sprites[(int)animation.Value.Counter];
+                _activeAnimation.Remove(spriteRenderer);
             }
         }
 
         public void Dispose()
         {
-            _activeAnimations.Clear();
+            _activeAnimation.Clear();
         }
     }
 }
