@@ -1,47 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 
 namespace SunnyLand
 {
     public class Main : MonoBehaviour
     {
+        public event Action GameInitialized;
+
         [SerializeField] private SpriteAnimationsConfig _playerAnimatorConfig;
         [SerializeField] private int _animationSpeed;
         [SerializeField] private PlayerView _playerView;
-        private Controllers _controllers;
-        private SpriteAnimator _spriteAnimator;
+        [SerializeField] private CanonView _canonView;
 
-        
+        private SpriteAnimator _playerAnimator;
+        private CameraController _cameraController;
+        private PlayerController _playerController;
+        private CanonAimController _canonAimController;
+        private BulletEmitterController _bulletEmitterController; //The intialization of BulletController we make here
 
-        
+
+
 
         private void Start()
         {
-            _playerAnimatorConfig = Resources.Load<SpriteAnimationsConfig>("SpriteAnimationsConfig");
-            _controllers = new Controllers();
+            GameInitialized += StartGameLoop;
 
+            _playerAnimatorConfig = Resources.Load<SpriteAnimationsConfig>("PlayerAnimatorConfig");
             if (_playerAnimatorConfig)
             {
-                _spriteAnimator = new SpriteAnimator(_playerAnimatorConfig);
-                _spriteAnimator.StartAnimation(_playerView.playerSpriteRenderer, AnimStatePlayer.idle, true, 10);
-                _controllers.Add(_spriteAnimator);
+                _playerAnimator = new SpriteAnimator(_playerAnimatorConfig);
             }
 
-            else
-            {
-                Debug.Log("error!");
-            }
+            _cameraController = new CameraController(_playerView._Transform, Camera.main.transform);
+            _playerController = new PlayerController(_playerView, _playerAnimator);
+
+            _canonAimController = new CanonAimController(_canonView._muzzleTransform, _playerView._Transform);
+            _bulletEmitterController = new BulletEmitterController(_canonView._bullets, _canonView._emitterTransform);
+
         }
-
-        private void Update()
+        private void LateUpdate()
         {
-            var deltatime = Time.deltaTime;
-            _controllers.Execute(deltatime);
+            _playerController.Update();
+            _cameraController.Update();
+            _canonAimController.Update();
+            _bulletEmitterController.Update();
         }
 
 
+
+
+        private void StartGameLoop()
+        {
+            GameInitialized -= StartGameLoop;
+        }
     }
 }
 
