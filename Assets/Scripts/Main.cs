@@ -10,16 +10,22 @@ namespace SunnyLand
     {
         public event Action GameInitialized;
 
+        [SerializeField] private List<CoinView> _coinviews;
         [SerializeField] private SpriteAnimationsConfig _playerAnimatorConfig;
+        [SerializeField] private SpriteAnimationsConfig _coinsAnimatorConfig;
         [SerializeField] private int _animationSpeed;
         [SerializeField] private PlayerView _playerView;
         [SerializeField] private CanonView _canonView;
+        
 
         private SpriteAnimator _playerAnimator;
+        private SpriteAnimator _coinAnimator;
         private CameraController _cameraController;
         private PlayerController _playerController;
         private CanonAimController _canonAimController;
-        private BulletEmitterController _bulletEmitterController; //The intialization of BulletController we make here
+        private BulletEmitterController _bulletEmitterController;
+        private CoinsController _coinsController;
+        //The intialization of BulletController we make here
 
 
 
@@ -33,12 +39,20 @@ namespace SunnyLand
             {
                 _playerAnimator = new SpriteAnimator(_playerAnimatorConfig);
             }
+            _coinsAnimatorConfig = Resources.Load<SpriteAnimationsConfig>("CoinAnimConfiguration");
+            if (_coinsAnimatorConfig)
+            {
+                _coinAnimator = new SpriteAnimator(_coinsAnimatorConfig);
+            }
+
 
             _cameraController = new CameraController(_playerView._Transform, Camera.main.transform);
             _playerController = new PlayerController(_playerView, _playerAnimator);
 
             _canonAimController = new CanonAimController(_canonView._muzzleTransform, _playerView._Transform);
             _bulletEmitterController = new BulletEmitterController(_canonView._bullets, _canonView._emitterTransform);
+            _coinsController = new CoinsController(_playerView, _coinAnimator, _coinviews);
+            
 
         }
         private void LateUpdate()
@@ -47,6 +61,7 @@ namespace SunnyLand
             _cameraController.Update();
             _canonAimController.Update();
             _bulletEmitterController.Update();
+            _coinAnimator.Update();
         }
 
 

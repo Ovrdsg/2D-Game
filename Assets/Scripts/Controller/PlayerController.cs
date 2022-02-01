@@ -9,9 +9,9 @@ public class PlayerController
     private bool _isJump;
     private bool _isMoving;
 
-    private float _speed = 30f;
-    private float _animationSpeed = 10f;
-    private float _jumpSpeed = 9;
+    private float _speed = 190f;
+    private float _animationSpeed = 3f;
+    private float _jumpSpeed = 10;
     private float _movingThreshHold = .1f;
     private float _jumpThreshHold = 1f;
 
