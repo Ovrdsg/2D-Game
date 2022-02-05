@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 
 
+
 namespace SunnyLand
 {
     public class Main : MonoBehaviour
@@ -11,11 +12,14 @@ namespace SunnyLand
         public event Action GameInitialized;
 
         [SerializeField] private List<CoinView> _coinviews;
+        [SerializeField] private List<PlayerView> _deathZones;
+        [SerializeField] private List<PlayerView> _winZones;
         [SerializeField] private SpriteAnimationsConfig _playerAnimatorConfig;
         [SerializeField] private SpriteAnimationsConfig _coinsAnimatorConfig;
         [SerializeField] private int _animationSpeed;
         [SerializeField] private PlayerView _playerView;
         [SerializeField] private CanonView _canonView;
+
         
 
         private SpriteAnimator _playerAnimator;
@@ -25,6 +29,7 @@ namespace SunnyLand
         private CanonAimController _canonAimController;
         private BulletEmitterController _bulletEmitterController;
         private CoinsController _coinsController;
+        private LevelCompleteController _levelCompleteController;
         //The intialization of BulletController we make here
 
 
@@ -48,11 +53,13 @@ namespace SunnyLand
 
             _cameraController = new CameraController(_playerView._Transform, Camera.main.transform);
             _playerController = new PlayerController(_playerView, _playerAnimator);
+            
 
             _canonAimController = new CanonAimController(_canonView._muzzleTransform, _playerView._Transform);
             _bulletEmitterController = new BulletEmitterController(_canonView._bullets, _canonView._emitterTransform);
             _coinsController = new CoinsController(_playerView, _coinAnimator, _coinviews);
-            
+            _levelCompleteController = new LevelCompleteController(_playerView, _deathZones, _winZones);
+
 
         }
         private void LateUpdate()
@@ -62,6 +69,7 @@ namespace SunnyLand
             _canonAimController.Update();
             _bulletEmitterController.Update();
             _coinAnimator.Update();
+            
         }
 
 
