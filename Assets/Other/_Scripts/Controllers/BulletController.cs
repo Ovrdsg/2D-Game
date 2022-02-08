@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PlatformerMVC.Controllers
 {
-    public class BulletController
+    internal class BulletController
     {
         private Vector3 _velocity;
         private LevelObjectView _view;

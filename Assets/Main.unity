@@ -20327,6 +20327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6664ce13aa8c6245a00e4e9f68caaff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 1000398611}
   _coinviews:
   - {fileID: 2039942491}
   - {fileID: 1252468380}

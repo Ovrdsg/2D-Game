@@ -11,6 +11,7 @@ namespace SunnyLand
     {
         public event Action GameInitialized;
 
+        [SerializeField] private Camera _mainCamera;
         [SerializeField] private List<CoinView> _coinviews;
         [SerializeField] private List<PlayerView> _deathZones;
         [SerializeField] private List<PlayerView> _winZones;
@@ -51,7 +52,7 @@ namespace SunnyLand
             }
 
 
-            _cameraController = new CameraController(_playerView._Transform, Camera.main.transform);
+            _cameraController = new CameraController(_playerView._Transform, _mainCamera.transform);
             _playerController = new PlayerController(_playerView, _playerAnimator);
             
 
