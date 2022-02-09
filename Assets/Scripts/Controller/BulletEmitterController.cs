@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SunnyLand
 {
-    public class BulletEmitterController : MonoBehaviour
+    internal sealed class BulletEmitterController 
     {
         private List<BulletController> _bullets = new List<BulletController>();
         private Transform _transform;

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 753528863}
   - component: {fileID: 753528868}
   - component: {fileID: 753528869}
+  - component: {fileID: 2436818142898771478}
   m_Layer: 0
   m_Name: Opossum
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 3f751ef232f4bc542aa65f942602bd43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -161,8 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
-  Wp1: {fileID: 0}
-  Wp2: {fileID: 0}
 --- !u!114 &753528868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,3 +232,19 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &2436818142898771478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3648433234857458150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5aa54689d23499882998e003e24fd9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiDSetter: {fileID: 753528863}
+  _wayPoints:
+  - {fileID: 0}
+  - {fileID: 0}

@@ -5,7 +5,7 @@ using System;
 
 namespace SunnyLand
 {
-    public class LevelCompleteController : IDisposable
+    internal class LevelCompleteController : IDisposable
     {
         private Vector3 _startPosition;
         private PlayerView _playerView;
@@ -15,14 +15,14 @@ namespace SunnyLand
         public LevelCompleteController(PlayerView playerView, List<PlayerView> deathZones, List<PlayerView> winzones)
         {
             _startPosition = playerView.transform.position;
-            _playerView.OnObjectContact += OnObjectContact;
+            //_playerView.OnObjectContact += OnObjectContact;
             _playerView = playerView;
             _deathZones = deathZones;
             _winZones = winzones;
 
             foreach(var deathzone in deathZones)
             {
-                deathzone.OnObjectContact += OnObjectContact;
+                //deathzone.OnObjectContact += OnObjectContact;
             }
         }
 
@@ -38,7 +38,7 @@ namespace SunnyLand
 
         public void Dispose()
         {
-            _playerView.OnObjectContact -= OnObjectContact;
+            //_playerView.OnObjectContact -= OnObjectContact;
         }
 
     }

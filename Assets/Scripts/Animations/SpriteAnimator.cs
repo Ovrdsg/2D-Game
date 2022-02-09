@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -6,54 +5,22 @@ using System;
 
 namespace SunnyLand
 {
-    public class SpriteAnimator : IDisposable
+    public class SpriteAnimator : IExecute, IDisposable
     {
 
-        private sealed class Animation
-        {
-            public AnimStatePlayer Track;
-            public List<Sprite> Sprites;
-            public bool Loop;
-            public float Speed = 10;
-            public float Counter;
-            public bool Sleep;
-
-            public void Update()
-            {
-                if (Sleep) return;
-
-                Counter += Time.deltaTime * Speed;
-                if (Loop)
-                {
-                    while (Counter > Sprites.Count)
-                    {
-                        Counter -= Sprites.Count;
-                    }
-                }
-                else if (Counter > Sprites.Count)
-                {
-                    Counter = Sprites.Count;
-                    Sleep = true;
-                }
-            }
-
-        }
-
-
-
         private SpriteAnimationsConfig _config;
-        private Dictionary<SpriteRenderer, Animation> _activeAnimation = new Dictionary<SpriteRenderer, Animation>();
+        private Dictionary<SpriteRenderer, SpriteAnimation> _activeAnimation = new Dictionary<SpriteRenderer, SpriteAnimation>();
 
         public SpriteAnimator(SpriteAnimationsConfig config)
         {
             _config = config;
         }
 
-        public void Update()
+        public void Execute(float deltaTime)
         {
             foreach (var animation in _activeAnimation)
             {
-                animation.Value.Update();
+                animation.Value.Update(deltaTime);
 
                 if (animation.Value.Counter < animation.Value.Sprites.Count)
                 {
@@ -80,7 +47,7 @@ namespace SunnyLand
             }
             else
             {
-                _activeAnimation.Add(spriteRenderer, new Animation()
+                _activeAnimation.Add(spriteRenderer, new SpriteAnimation()
                 {
 
                     Loop = loop,
