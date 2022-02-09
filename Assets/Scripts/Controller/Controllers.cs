@@ -20,7 +20,7 @@ namespace SunnyLand
             _fixedExecuteControllers = new List<IFixedExecute>(8);
         }
 
-        internal Controllers Add(IController controller)
+        internal void Add(IController controller)
         {
             if(controller is IRemoveFromControllers controllerToRemove)
             {
@@ -30,9 +30,9 @@ namespace SunnyLand
             {
                 _initilalizeControllers.Add(initializeController);
             }
-            if(controller is IExecute executeContoller)
+            if(controller is IExecute executeController)
             {
-                _executeControllers.Add(executeContoller);
+                _executeControllers.Add(executeController);
             }
             if(controller is ILateExecute lateExecuteController)
             {
@@ -43,7 +43,6 @@ namespace SunnyLand
                 _fixedExecuteControllers.Add(fixedExecuteController);
             }
 
-            return this;
         }
 
         internal void Remove(IController controller)
@@ -78,27 +77,27 @@ namespace SunnyLand
             }
         }
 
-        public void Execute(float deltatime)
+        public void Execute(float deltaTime)
         {
             for(var index = 0; index <_executeControllers.Count; index++)
             {
-                _executeControllers[index].Execute(deltatime);
+                _executeControllers[index].Execute(deltaTime);
             }
         }
 
-        public void LateExecute(float deltatime)
+        public void LateExecute(float deltaTime)
         {
             for(var index = 0; index <_lateExecuteControllers.Count; index++)
             {
-                _lateExecuteControllers[index].LateExecute(deltatime);
+                _lateExecuteControllers[index].LateExecute(deltaTime);
             }
         }
 
-        public void FixedExecute(float deltatime)
+        public void FixedExecute(float deltaTime)
         {
             for(var index = 0; index < _fixedExecuteControllers.Count; index++)
             {
-                _fixedExecuteControllers[index].FixedExecute(deltatime);
+                _fixedExecuteControllers[index].FixedExecute(deltaTime);
             }
         }
     }
