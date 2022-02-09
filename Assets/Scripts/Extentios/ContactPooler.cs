@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SunnyLand
 {
-    public class ContactPooler
+    internal sealed class ContactPooler : IExecute
     {
         private ContactPoint2D[] _contactPoint2D = new ContactPoint2D[10];
         private const float _contactPointThreshhold = .6f;
@@ -18,7 +18,7 @@ namespace SunnyLand
             _collider2D = collider2D;
         }
 
-        public void Update()
+        public void Execute(float deltaTime)
         {
             IsGrounded = false;
             HasLeftContact = false;

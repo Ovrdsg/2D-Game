@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SunnyLand
 {
-    public class CanonView : MonoBehaviour
+    internal class CanonView : MonoBehaviour
     {
         public Transform _muzzleTransform;
         public Transform _emitterTransform;

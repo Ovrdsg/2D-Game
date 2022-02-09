@@ -4,16 +4,15 @@ using UnityEngine;
 
 namespace SunnyLand
 {
-    public class CameraController
+    internal sealed class CameraController: IFixedExecute
     {
+        private float _x;
+        private float _y;
 
-        private float x;
-        private float y;
+        private float offSetX = 1f;
+        private float offSetY = 1f;
 
-        private float offSetX = 1.5f;
-        private float offSetY = 1.5f;
-
-        private int _camSpeed = 150;
+        private int _camSmoothFactor = 3;
 
 
         private Transform _playerTransform;
@@ -26,14 +25,15 @@ namespace SunnyLand
             _cameraTransform = camera;
         }
 
-        public void Update()
+        public void FixedExecute(float deltaTime)
         {
-            x = _playerTransform.position.x;
-            y = _playerTransform.position.y;
+            _x = _playerTransform.position.x + offSetX;
+            _y = _playerTransform.position.y + offSetY;
 
-            _cameraTransform.position =
-                Vector3.Lerp(_cameraTransform.position, new Vector3(x + offSetX, y + offSetY, _cameraTransform.position.z),
-                    Time.deltaTime * _camSpeed);
+            
+               Vector3 smoothPosition = Vector3.Lerp(_cameraTransform.position, new Vector3(_x, _y, _cameraTransform.position.z),
+                    _camSmoothFactor * deltaTime);
+               _cameraTransform.position = smoothPosition;
         }
 
 

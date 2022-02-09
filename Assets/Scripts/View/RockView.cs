@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SunnyLand
 {
-    public class RockView : PlayerView
+    internal class RockView : PlayerView
     {
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SunnyLand
 {
-    public class CoinView : PlayerView
+    internal sealed class CoinView : PlayerView
     {
       
     }
