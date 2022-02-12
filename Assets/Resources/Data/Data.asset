@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5aa5b0d7e448c989c1dd4c72bade52, type: 3}
-  m_Name: PlayerMoveConfig
+  m_Script: {fileID: 11500000, guid: 63d66c2344db9de40b053bfc7c52ae0e, type: 3}
+  m_Name: Data
   m_EditorClassIdentifier: 
-  _speed: 400
-  _jumpForce: 30
-  _movingThreshHold: 0.1
-  _jumpThreshHold: 1
-  _fallThreshHold: -4.48
-  _timeToNextJump: 0.75
-  _timeToReleaseStun: 1.016
+  _enemyDataPath: 
+  _playerDataPath: 
+  _playerModelPath: 
+  _pickUpFxPath: Prefabs/Fx/PickUpFx
+  _enemyDeathFxPath: Prefabs/Fx/EnemyDeathFx
+  _enemyBlowFxPath: 

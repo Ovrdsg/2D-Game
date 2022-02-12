@@ -5,13 +5,14 @@ using System;
 
 namespace SunnyLand
 {
-    public class SpriteAnimator : IExecute, IDisposable
+    internal class SpriteAnimator : IExecute, IDisposable
     {
 
-        private SpriteAnimationsConfig _config;
+        private ObjectsAnimationsConfig _config;
         private Dictionary<SpriteRenderer, SpriteAnimation> _activeAnimation = new Dictionary<SpriteRenderer, SpriteAnimation>();
 
-        public SpriteAnimator(SpriteAnimationsConfig config)
+        public Dictionary<SpriteRenderer, SpriteAnimation> ActiveAnimation => _activeAnimation;
+        public SpriteAnimator(ObjectsAnimationsConfig config)
         {
             _config = config;
         }
@@ -30,7 +31,7 @@ namespace SunnyLand
         }
 
 
-        public void StartAnimation(SpriteRenderer spriteRenderer, AnimStatePlayer track, bool loop, float speed)
+        public void StartAnimation(SpriteRenderer spriteRenderer, AnimationStates track, bool loop, float speed)
         {
             if (_activeAnimation.TryGetValue(spriteRenderer, out var animation))
             {

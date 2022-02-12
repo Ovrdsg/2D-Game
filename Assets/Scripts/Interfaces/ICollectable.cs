@@ -4,9 +4,7 @@ namespace SunnyLand
 {
     public interface ICollectable
     {
-        SpriteRenderer SpriteRenderer { get; } 
-        SpriteAnimator SpriteAnimator { get; }
-        
-        GameObject GameObject { get; }
+        ObjectType Type { get; }
+        float AmountAdd { get; }
     }
 }

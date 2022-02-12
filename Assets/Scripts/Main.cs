@@ -10,29 +10,24 @@ namespace SunnyLand
     internal sealed class Main : MonoBehaviour
     {
         public event Action GameInitialized;
-
-        [SerializeField] private Camera _cameraMain;
-        [SerializeField] private List<GemView> _gemViews;
-        [SerializeField] private List<CherryView> _cherryViews;
-        [SerializeField] private List<PlayerView> _deathZones;
-        [SerializeField] private List<PlayerView> _winZones;
-        [SerializeField] private SpriteAnimationsConfig _playerAnimatorConfig;
-        [SerializeField] private SpriteAnimationsConfig _cherryAnimatorConfig;
-        [SerializeField] private SpriteAnimationsConfig _gemAnimatorConfig;
+        [SerializeField] private Data _data;
+        [SerializeField] private ObjectsAnimationsConfig objectsAnimatorConfig;
         [SerializeField] private PlayerMoveConfig _playerMoveConfig;
+        
+        [SerializeField] private Camera _cameraMain;
+        [SerializeField] private List<PlayerView> _winZones;
+        
         [SerializeField] private PlayerView _playerView;
         [SerializeField] private CanonView _canonView;
 
         
 
         private SpriteAnimator _playerAnimator;
-        private SpriteAnimator _cherryAnimator;
-        private SpriteAnimator _gemAnimator;
         private CameraController _cameraController;
         private PlayerController _playerController;
         private CanonAimController _canonAimController;
         private BulletEmitterController _bulletEmitterController;
-        private CoinsController _collectiblesController;
+        private ObjectsAnimationsController _objectsAnimationsController;
         private LevelCompleteController _levelCompleteController;
 
         private Controllers _controllers;
@@ -41,47 +36,49 @@ namespace SunnyLand
 
         private void Awake()
         {
-            _animators = new List<SpriteAnimator>();
+
         }
 
         private void Start()
         {
             GameInitialized += StartGameLoop;
-            _playerAnimatorConfig = Resources.Load<SpriteAnimationsConfig>("PlayerAnimatorConfig");
-            _cherryAnimatorConfig = Resources.Load<SpriteAnimationsConfig>("CherryAnimConfiguration");
-            _gemAnimatorConfig = Resources.Load<SpriteAnimationsConfig>("CherryAnimConfiguration");
+            objectsAnimatorConfig = Resources.Load<ObjectsAnimationsConfig>("ObjectAnimationConfig");
 
-            if (_playerAnimatorConfig && _cherryAnimatorConfig && _gemAnimatorConfig)
+
+            if (objectsAnimatorConfig)
             {
                 _controllers = new Controllers();
+                var fxFactory = new FxFactory(_data);
                 
-                _playerAnimator = new SpriteAnimator(_playerAnimatorConfig);
-                _cherryAnimator = new SpriteAnimator(_cherryAnimatorConfig);
-                _gemAnimator = new SpriteAnimator(_gemAnimatorConfig);
                 
-                _gemViews = FindObjectsOfType<GemView>().ToList();
-                _cherryViews = FindObjectsOfType<CherryView>().ToList();
-
-                var contactPooler = new ContactPooler(_playerView._collider2D);
+                var listAnimatedObjects = FindObjectsOfType<InteractableObject>().ToList();
+                var listFxObjects = new List<FxView>();
+                _objectsAnimationsController = new ObjectsAnimationsController(_playerView, objectsAnimatorConfig, listAnimatedObjects);
+                var fxController = new FxController(_playerView, fxFactory, objectsAnimatorConfig, listFxObjects);
+                var contactPooler = new ContactPooler(_playerView.Collider2D);
                 var pcInputHorizontal = new PCInputHorizontal();
                 var pcInputVertical = new PCInputVertical();
                 var inputController = new InputController(pcInputHorizontal, pcInputVertical);
                 var jumpsCoolDown = new JumpsCoolDown(_playerMoveConfig);
-                _cameraController = new CameraController(_playerView.PlayerTransform, _cameraMain.transform);
-                _playerController = new PlayerController(_playerView, _playerAnimator, _playerAnimatorConfig, pcInputHorizontal, pcInputVertical, contactPooler, _playerMoveConfig, jumpsCoolDown);
+                var stunCoolDown = new StunCoolDown(_playerMoveConfig, _playerView);
+                _cameraController = new CameraController(_playerView.ObjectTransform, _cameraMain.transform);
+                _playerController = new PlayerController(_playerView, objectsAnimatorConfig, pcInputHorizontal, pcInputVertical, contactPooler, _playerMoveConfig, jumpsCoolDown, stunCoolDown);
+
+                
                 
                 //_canonAimController = new CanonAimController(_canonView._muzzleTransform, _playerView.PlayerTransform);
                 //_bulletEmitterController = new BulletEmitterController(_canonView._bullets, _canonView._emitterTransform);
-                _collectiblesController = new CoinsController(_cherryAnimatorConfig, _gemAnimatorConfig, _playerView, _gemViews, _cherryViews);
                 //_levelCompleteController = new LevelCompleteController(_playerView, _deathZones, _winZones);
 
                 _controllers.Add(_playerController);
                 _controllers.Add(_cameraController);
+                _controllers.Add(fxController);
                 _controllers.Add(inputController);
                 _controllers.Add(_playerAnimator);
+                _controllers.Add(_objectsAnimationsController);
                 _controllers.Add(contactPooler);
-                _controllers.Add(_collectiblesController);
                 _controllers.Add(jumpsCoolDown);
+                _controllers.Add(stunCoolDown);
             }
             else throw new NullReferenceException("PlayerAnimatorConfig or CollectiblesAnimatorConfig is null. " +
                                                                                             "Please place it in the inspector");
@@ -101,7 +98,6 @@ namespace SunnyLand
             _controllers.Execute(deltaTime);
             //_canonAimController.Update();
             //_bulletEmitterController.Update();
-            _cherryAnimator.Execute(deltaTime);
         }
 
         private void FixedUpdate()

@@ -1,19 +1,22 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 
 
 namespace SunnyLand
 {
-    public class SpriteAnimation
+    internal class SpriteAnimation
     {
-        public AnimStatePlayer Track;
+        public event Action<AnimationStates, SpriteAnimation> AnimationSleep;
+        
+        public AnimationStates Track;
         public List<Sprite> Sprites;
         public bool Loop;
-        public float Speed = 10;
+        public float Speed;
         public float Counter;
         public bool Sleep;
 
-        public void Update(float deltaTime)
+        internal void Update(float deltaTime)
         {
             if (Sleep) return;
 
@@ -29,6 +32,7 @@ namespace SunnyLand
             {
                 Counter = Sprites.Count;
                 Sleep = true;
+                AnimationSleep?.Invoke(Track, this);
             }
         }
     }
