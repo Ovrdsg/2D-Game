@@ -7,27 +7,16 @@ using System;
 
 namespace SunnyLand
 {
-    public enum AnimStatePlayer
-    {
-        idle = 0,
-        run = 1,
-        jump = 2,
-        fall = 3,
-        hurt = 4,
-        crouch = 5,
-        climb = 6
-    }
 
-
-    [CreateAssetMenu(fileName = "SpriteAnimationsConfig", menuName = "Configs/SpriteAnimationsConfig", order = 1)]
-    public class SpriteAnimationsConfig : ScriptableObject
+    [CreateAssetMenu(fileName = "ObjectAnimationsConfig", menuName = "Configs/ObjectsAnimationsConfig", order = 1)]
+    public class ObjectsAnimationsConfig : ScriptableObject
     {
         [SerializeField] private float _animationSpeed;
         
         [Serializable]
         public sealed class SpritesSequence
         {
-            public AnimStatePlayer Track;
+            public AnimationStates Track;
             [SerializeField] private bool _loop = false;
             public List<Sprite> Sprites = new List<Sprite>();
 

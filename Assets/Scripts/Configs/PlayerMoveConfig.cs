@@ -11,13 +11,15 @@ namespace SunnyLand
         [SerializeField][Range(0.1f, 1f)] private float _jumpThreshHold;
         [SerializeField][Range(-10f, 10f)] private float _fallThreshHold;
         [SerializeField] [Range(0.1f, 5f)] private float _timeToNextJump;
+        [SerializeField] [Range(0.1f, 2f)] private float _timeToReleaseStun;
 
         public float Speed => _speed;
         public float JumpForce => _jumpForce;
         public float MovingThreshHold => _movingThreshHold;
         public float JumpThreshHold => _jumpThreshHold;
         public float FallThreshHold => _fallThreshHold;
-
         public float TimeToNextJump => _timeToNextJump;
+        public float TimeToReleaseStun => _timeToReleaseStun;
+        
     }
 }
