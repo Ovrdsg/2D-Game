@@ -17,6 +17,9 @@ namespace SunnyLand
         [Space][Header("Models paths")]
         [SerializeField] private string _playerModelPath;
 
+        [Space][Header("Sounds Paths")]
+        [SerializeField] private string _soundsPath;
+
         [Space] [Header("FX data paths")] 
         [SerializeField] private string _pickUpFxPath;
         [SerializeField] private string _enemyDeathFxPath;
@@ -47,6 +50,8 @@ namespace SunnyLand
 
         internal PlayerModel Fox => Resources.Load<PlayerModel>(Path.Combine(_datapath, _playerModelPath));
 
-        
+        internal SoundsData SoundsData => Resources.Load<SoundsData>(Path.Combine(_datapath, _soundsPath));
+
+
     }
 }

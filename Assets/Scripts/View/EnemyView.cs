@@ -10,7 +10,14 @@ namespace SunnyLand
         [SerializeField] private BoxCollider2D _head;
         
         private SpriteAnimator _spriteAnimator;
-        
+        private AudioSource _audioSource;
+        [SerializeField] private AudioClip _flayEnemy;
+
+        private void Start()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
+
         protected override void Interaction(InteractableObject obj)
         {
             
@@ -27,7 +34,9 @@ namespace SunnyLand
             _spriteRenderer.flipY = true;
             _head.enabled = false;
             Vector3 movement = new Vector2(Random.Range(40, 70), Random.Range(-40, 40));
+            _audioSource.PlayOneShot(_flayEnemy);
             transform.position += movement * Time.deltaTime;
+            
         }
 
         public void AnimationsInit(ObjectsAnimationsConfig animationsConfig)

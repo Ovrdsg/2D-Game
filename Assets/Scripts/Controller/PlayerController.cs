@@ -37,6 +37,10 @@ namespace SunnyLand {
         private readonly PlayerMoveConfig _playerMoveConfig;
         private IUserInputProxy _horizontalInputProxy;
         private IUserInputProxy _verticalInputProxy;
+        private SoundFactory _soundFactory;
+        
+
+        
 
         public PlayerController(PlayerView player, ObjectsAnimationsConfig animationsConfig, IUserInputProxy horizontal, IUserInputProxy vertical,
             ContactPooler contactPooler, PlayerMoveConfig playerMoveConfig, JumpsCoolDown jumpsCoolDown, StunCoolDown stunCoolDown)
@@ -72,6 +76,7 @@ namespace SunnyLand {
             _playerView.Rigidbody2D.velocity = _playerView.Rigidbody2D.velocity.Change(x: _xVelocity);
             
             _playerView.transform.localScale = (_xAxisInput < 0 ? _leftScale : _rightScale);
+           
 
         }
 
@@ -94,6 +99,8 @@ namespace SunnyLand {
                 if (!_isJump || !(Mathf.Abs(_playerView.Rigidbody2D.velocity.y) <= _jumpThreshHold) ||
                     !_jumpsCoolDown.CanJump) return;
                 _playerView.Rigidbody2D.velocity = Vector2.up * _jumpForce;
+                _playerView.Sound = _soundFactory.GetSound(SoundsType.SoundOfACharacterJumping);
+                _playerView.PlaySound();
                 _jumpsCoolDown.ResetFirstJump();
 
             }

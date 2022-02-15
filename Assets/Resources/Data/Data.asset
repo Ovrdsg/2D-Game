@@ -15,6 +15,7 @@ MonoBehaviour:
   _enemyDataPath: 
   _playerDataPath: 
   _playerModelPath: 
+  _soundsPath: SoundsData
   _pickUpFxPath: Prefabs/Fx/PickUpFx
   _enemyDeathFxPath: Prefabs/Fx/EnemyDeathFx
   _enemyBlowFxPath: 

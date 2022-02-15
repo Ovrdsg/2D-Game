@@ -1,39 +1,291 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.3f1 (4bef613afd59) revision 4976481'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19042.1415; Version 2009; 64bit' Language: 'ru' Physical Memory: 8063 MB
+OS: 'Windows 10 Home; OS build 19042.1526; Version 2009; 64bit' Language: 'ru' Physical Memory: 8134 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2021.1.3f1\Editor\Unity.exe
+D:\Unity\2021.1.3f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Coding/MyRepositories/GB_2D_Game
+D:/GitHub/2D-Game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-32711
-Successfully changed project path to: C:/Coding/MyRepositories/GB_2D_Game
-C:/Coding/MyRepositories/GB_2D_Game
+60196
+Successfully changed project path to: D:/GitHub/2D-Game
+D:/GitHub/2D-Game
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 88.19 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 71.77 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.3f1 (4bef613afd59)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.3f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Coding/MyRepositories/GB_2D_Game/Assets
+[Subsystems] Discovering subsystems at path D:/Unity/2021.1.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/GitHub/2D-Game/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: AMD Radeon R7 200 Series (ID=0x683f)
+    Renderer: Radeon RX550/550 Series (ID=0x67ff)
     Vendor:   ATI
-    VRAM:     1003 MB
-    Driver:   27.20.21002.112
+    VRAM:     2027 MB
+    Driver:   30.0.13023.1012
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.3f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.3f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56820
+Mono path[0] = 'D:/Unity/2021.1.3f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/2021.1.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity/2021.1.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56460
 Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2021.1.3f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/Unity/2021.1.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001814 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 62.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.052 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002428 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.427 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1852 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 80.2 MB.
+System memory in use after: 51.2 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2288.
+Total: 9.430800 ms (FindLiveObjects: 0.410300 ms CreateObjectMapping: 0.212400 ms MarkObjects: 8.686400 ms  DeleteObjects: 0.119700 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Main.unity
+  artifactKey: Guid(548efbe8196c7bb41a94d25d70cf82e6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Main.unity using Guid(548efbe8196c7bb41a94d25d70cf82e6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'c0d9ad744ae8590ade71be374ecadb3a') in 0.125587 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000389 seconds.
+  path: Assets/Thaleah_PixelFont/Thaleah_Demo.unity
+  artifactKey: Guid(180143f4a57f2124dae57257c95bc10a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Thaleah_PixelFont/Thaleah_Demo.unity using Guid(180143f4a57f2124dae57257c95bc10a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'fafd7cf57466376d348b025a75e4d504') in 0.030509 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Sound/Звук отлёта врагов.mp3
+  artifactKey: Guid(99904234cd9897d4fa5ac33c40453090) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Sound/Звук отлёта врагов.mp3 using Guid(99904234cd9897d4fa5ac33c40453090) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'b6f65fbd47a9c0830432701dd685c65b') in 0.123523 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Thaleah_PixelFont
+  artifactKey: Guid(04167d4b84e541046899702036803f1d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Thaleah_PixelFont using Guid(04167d4b84e541046899702036803f1d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '1b0da71899bdc0d3c16daaf21c204c66') in 0.012861 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Thaleah_PixelFont/Materials/ThaleahFat.png
+  artifactKey: Guid(0ac691dd25a276d468ee89cf1948229d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Thaleah_PixelFont/Materials/ThaleahFat.png using Guid(0ac691dd25a276d468ee89cf1948229d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8be7857ad83c7f71db9bbd0b1f79f359') in 0.123610 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Thaleah_PixelFont/Materials/ThaleahFat.mat
+  artifactKey: Guid(43d59b5c638b0664db55f3a4e4d130ef) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Thaleah_PixelFont/Materials/ThaleahFat.mat using Guid(43d59b5c638b0664db55f3a4e4d130ef) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '3d6af0a444bf645256cc3aac48311ba6') in 0.028658 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000371 seconds.
+  path: Assets/Thaleah_PixelFont/Thaleah_Readme.pdf
+  artifactKey: Guid(2b9a81d04b64ba846b895089734b9415) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Thaleah_PixelFont/Thaleah_Readme.pdf using Guid(2b9a81d04b64ba846b895089734b9415) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ed9b59a2fb147c8ead3699976cf149ce') in 0.015623 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/Resources/Data/SoundsData.asset
+  artifactKey: Guid(b50b60589c8211443a41d0035d5a4063) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Data/SoundsData.asset using Guid(b50b60589c8211443a41d0035d5a4063) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ae2223ccdd1d29a59e6ff948389927b8') in 0.018244 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf
+  artifactKey: Guid(585188cdc4600544eb408bee749e4b3a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf using Guid(585188cdc4600544eb408bee749e4b3a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '91476dfdc6d8c77c9ba2883deab1387e') in 0.055350 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/Scripts/View/EnemyView.cs
+  artifactKey: Guid(20f06deb1e6e421a90a0a5d84bae9772) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Scripts/View/EnemyView.cs using Guid(20f06deb1e6e421a90a0a5d84bae9772) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '283f2452a48b7a849f057cea58b6bbcf') in 0.020736 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000316 seconds.
+  path: Assets/Scripts/Sounds/SoundsType.cs
+  artifactKey: Guid(10985b0108a30c84eab75157f8a45304) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Scripts/Sounds/SoundsType.cs using Guid(10985b0108a30c84eab75157f8a45304) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '901ef4c789263f1d49c66dda25852034') in 0.009282 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/Thaleah_PixelFont/Materials
+  artifactKey: Guid(5bbfc5203b36a9040838fe59081d4888) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Thaleah_PixelFont/Materials using Guid(5bbfc5203b36a9040838fe59081d4888) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ab128b1087d65387832ef9f7cfdb95f9') in 0.009358 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000316 seconds.
+  path: Assets/Thaleah_PixelFont/Materials/Thaleah_DemoBackground.png
+  artifactKey: Guid(b324a4685d480b346b084e8a5dbacbde) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Thaleah_PixelFont/Materials/Thaleah_DemoBackground.png using Guid(b324a4685d480b346b084e8a5dbacbde) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'fa265454f8e69aeb62eaa758b8e61eed') in 0.057301 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000314 seconds.
+  path: Assets/Scripts/Controller/PlayerController.cs
+  artifactKey: Guid(27304f5608a9348408bc89aeb2476644) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Scripts/Controller/PlayerController.cs using Guid(27304f5608a9348408bc89aeb2476644) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '948979124596a80e1608aeae61ceb82a') in 0.026452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Thaleah_PixelFont/ThaleahFat.fontsettings
+  artifactKey: Guid(652f7165b7c30ab46af6c4aad90a639b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Thaleah_PixelFont/ThaleahFat.fontsettings using Guid(652f7165b7c30ab46af6c4aad90a639b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'a67656840f55e2902a7be0bd161cc4d8') in 0.011299 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000486 seconds.
+  path: Assets/Scripts/View/PlayerView.cs
+  artifactKey: Guid(6de7a1e896ad26c43a7cd22650d226d3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Scripts/View/PlayerView.cs using Guid(6de7a1e896ad26c43a7cd22650d226d3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '65a8a6eda578d9c173e83ee165d23f49') in 0.026818 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002275 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.307 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1841 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 79.8 MB.
+System memory in use after: 79.9 MB.
+
+Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 2292.
+Total: 7.714300 ms (FindLiveObjects: 0.203100 ms CreateObjectMapping: 0.082000 ms MarkObjects: 7.397400 ms  DeleteObjects: 0.029000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1757.647527 seconds.
+  path: Assets/Scripts/Factories/SoundFactory.cs
+  artifactKey: Guid(25b795b3554c1f440b1569081f0dcf0d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Scripts/Factories/SoundFactory.cs using Guid(25b795b3554c1f440b1569081f0dcf0d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'b7fdf7f7d803b0f51ec3d2048818ef3a') in 0.109243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/Scripts/Factories/SoundFactory.cs
+  artifactKey: Guid(25b795b3554c1f440b1569081f0dcf0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Factories/SoundFactory.cs using Guid(25b795b3554c1f440b1569081f0dcf0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88f40c99e84a09f01aaec6e8fa0359f1') in 0.032968 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003002 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.449 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1842 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 79.8 MB.
+System memory in use after: 79.9 MB.
+
+Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 2295.
+Total: 7.168000 ms (FindLiveObjects: 0.209900 ms CreateObjectMapping: 0.104100 ms MarkObjects: 6.806700 ms  DeleteObjects: 0.045600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 33.085151 seconds.
+  path: Assets/Scripts/Factories/SoundFactory.cs
+  artifactKey: Guid(25b795b3554c1f440b1569081f0dcf0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Factories/SoundFactory.cs using Guid(25b795b3554c1f440b1569081f0dcf0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e1376f817fde1d43356486a0780737b') in 0.016975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.098348 seconds.
+  path: Assets/Scripts/Factories/ISoundFactory.cs
+  artifactKey: Guid(c57362f9961be834e8ca09dc4a873773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Factories/ISoundFactory.cs using Guid(c57362f9961be834e8ca09dc4a873773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f977f8c93eee22e74defd5e9294f0d2') in 0.017615 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002474 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.706 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1842 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 79.8 MB.
+System memory in use after: 80.0 MB.
+
+Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 2298.
+Total: 7.236700 ms (FindLiveObjects: 0.279900 ms CreateObjectMapping: 0.153600 ms MarkObjects: 6.772300 ms  DeleteObjects: 0.029100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.632719 seconds.
+  path: Assets/Scripts/Factories/ISoundFactory.cs
+  artifactKey: Guid(c57362f9961be834e8ca09dc4a873773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Factories/ISoundFactory.cs using Guid(c57362f9961be834e8ca09dc4a873773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f20755a86faf0b2186e6e78050ff67a') in 0.021129 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 785.436640 seconds.
+  path: Assets/Scripts/Controller/BulletController.cs
+  artifactKey: Guid(f1d0705ded9acb444982dfce2d7997bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/BulletController.cs using Guid(f1d0705ded9acb444982dfce2d7997bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b83252a63a79ce5d20de9bcd69b10999') in 0.008108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.773202 seconds.
+  path: Assets/Scripts/Controller/BulletEmitterController.cs
+  artifactKey: Guid(12d9df7dbb0a0c642bfb008566342b93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/BulletEmitterController.cs using Guid(12d9df7dbb0a0c642bfb008566342b93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a334b5fe3cccfe361ce34bb0c1e8a11a') in 0.019480 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.405200 seconds.
+  path: Assets/Scripts/Controller/CameraController.cs
+  artifactKey: Guid(6beac3a584c59a449824fe7d74e60f13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/CameraController.cs using Guid(6beac3a584c59a449824fe7d74e60f13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93abb97792a00cf3b9d8a8d3c26ed08f') in 0.019999 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.786779 seconds.
+  path: Assets/Scripts/Controller/FxController.cs
+  artifactKey: Guid(2229e15f1b1a48c3a67682f0ec67ccd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/FxController.cs using Guid(2229e15f1b1a48c3a67682f0ec67ccd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '420d7a3043ff1843185001cab288dec3') in 0.026625 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 137.019462 seconds.
+  path: Assets/Scripts/Controller/LevelCompleteController.cs
+  artifactKey: Guid(2c8b805e56e264d4eb80a339e460037d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/LevelCompleteController.cs using Guid(2c8b805e56e264d4eb80a339e460037d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38f4e072ebeb4acbe8032a982262bf02') in 0.008847 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
